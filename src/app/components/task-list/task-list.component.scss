@@ -1,0 +1,45 @@
+@import "../../../assets/styles/variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 1rem;
+  padding-inline: 2rem;
+  &-create-btn {
+    width: fit-content;
+    align-self: end;
+    background-color: #008001;
+  }
+  &_task {
+    margin-block: 1rem;
+    padding: 1rem;
+    background-color: #898989;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      font-size: 0.8rem;
+      line-height: 1.6rem;
+    }
+    &-tagline {
+      opacity: 80%;
+    }
+    &-done {
+      color: #008001;
+    }
+    &-inProgress {
+      color: #f4cd61;
+    }
+    &_btns {
+      display: flex;
+      gap: 1rem;
+      .delete-btn {
+        background-color: red;
+      }
+      .edit-btn {
+        background-color: #f4cd61;
+      }
+    }
+  }
+}

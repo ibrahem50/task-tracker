@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <button class="wrapper-create-btn btn" routerLink="new">Create Task</button>
+  @if (tasks$ | async) { @for (task of tasks$ | async; track task) {
+  <div class="wrapper_task">
+    <div>
+      <p class="wrapper_task-title title">{{ task.title }}</p>
+      <p class="wrapper_task-tagline title">{{ task.description }}</p>
+      <p
+        class="wrapper_task-title title"
+        [ngClass]="{
+          'wrapper_task-done': task.isCompleted,
+          'wrapper_task-inProgress': !task.isCompleted
+        }"
+      >
+        {{ task.isCompleted ? "Completed" : "InProgress" }}
+      </p>
+      <p class="wrapper_task-tagline title">Due Date : {{ task.dueDate }}</p>
+    </div>
+    <div class="wrapper_task_btns">
+      <button class="edit-btn btn" (click)="navigateToEdit(task.id)">
+        Edit
+      </button>
+      <button class="delete-btn btn" (click)="deleteTask(task.id)">
+        Delete
+      </button>
+    </div>
+  </div>
+  } }
+</div>

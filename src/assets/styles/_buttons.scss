@@ -1,0 +1,13 @@
+@import "./variables";
+
+.primary-btn {
+  background-color: $theme-default_sec;
+}
+
+.btn {
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  color: #ffff;
+  font-weight: bold;
+}

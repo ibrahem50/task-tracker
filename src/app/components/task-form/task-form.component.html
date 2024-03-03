@@ -1,0 +1,39 @@
+<form class="form" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label class="label" for="id">ID:</label>
+    <input class="text" type="text" id="id" formControlName="id" />
+  </div>
+  <div class="form-group">
+    <label class="label" for="title">Title:</label>
+    <input class="text" type="text" id="title" formControlName="title" />
+  </div>
+  <div class="form-group">
+    <label class="label" for="description">Description:</label>
+    <textarea
+      class="text"
+      id="description"
+      formControlName="description"
+    ></textarea>
+  </div>
+  <div class="form-group">
+    <label class="label" for="dueDate">Due Date:</label>
+    <input class="text" type="date" id="dueDate" formControlName="dueDate" />
+  </div>
+  <div class="form-group">
+    <label class="label" for="isCompleted">Completed:</label>
+    <input
+      class="title"
+      type="checkbox"
+      id="isCompleted"
+      formControlName="isCompleted"
+    />
+  </div>
+
+  @if (formError) {
+  <p class="error">form not valid or id already exist</p>
+  }
+
+  <button type="submit" class="btn primary-btn">
+    {{ isEditMode ? "Update Task" : "Create Task" }}
+  </button>
+</form>
